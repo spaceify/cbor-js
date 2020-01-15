@@ -1,3 +1,14 @@
+This is an up-to-date fork of the paroga/cbor-js by Patrick Gansterer. In early 2020, we were searching for a Javascript CBOR library, and found the excellent paroga/cbor-js, which sadly had not been updated for several years. Because we really needed a CBOR library in our projects, we decided to fork the repository and bring it up-to-date.
+
+Goals of this fork:
+
+- Merge all open pull requests of the original paroga/cbor-js (DONE)
+- Resolve open issues of the original paroga/cbor-js (PARTLY DONE)
+- Optimize for speed (TBD)
+- Add more tests and benchamrking (TBD)
+- Add support for tagging (TBD)
+- Publish on npm (TBD)
+ 
 cbor-js
 =======
 
