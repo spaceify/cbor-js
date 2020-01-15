@@ -186,6 +186,7 @@ function encode(value) {
 
 function decode(data, tagger, simpleValue) {
   var dataView = new DataView(data);
+  var ta = new Uint8Array(data);
   var offset = 0;
 
   if (typeof tagger !== "function")
@@ -226,7 +227,7 @@ function decode(data, tagger, simpleValue) {
     return commitRead(8, dataView.getFloat64(offset));
   }
   function readUint8() {
-    return commitRead(1, dataView.getUint8(offset));
+    return commitRead(1, ta[offset]);
   }
   function readUint16() {
     return commitRead(2, dataView.getUint16(offset));
@@ -238,7 +239,7 @@ function decode(data, tagger, simpleValue) {
     return readUint32() * POW_2_32 + readUint32();
   }
   function readBreak() {
-    if (dataView.getUint8(offset) !== 0xff)
+    if (ta[offset] !== 0xff)
       return false;
     offset += 1;
     return true;
